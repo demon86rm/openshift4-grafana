@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: grafana
+  namespace: my-grafana
+spec:
+  endpoints:
+    - interval: 5s
+      path: /metrics
+      port: 3000-tcp
+      scheme: http
+  namespaceSelector:
+    matchNames:
+      - my-grafana
+  selector:
+    matchLabels:
+      app: grafana
