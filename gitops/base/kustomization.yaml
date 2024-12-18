@@ -10,3 +10,4 @@ resources:
   - secret.yaml
   - rolebindings.yaml
   - patch-grafanadatasource.yaml
+  - servicemonitor.yaml
